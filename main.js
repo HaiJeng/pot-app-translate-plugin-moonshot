@@ -10,7 +10,7 @@ async function translate(text, from, to, options) {
         throw "API密钥未配置，请在插件设置中添加月之暗面 API密钥";
     }
     
-    // 月之暗面 Kimi API 请求地址
+    // 月之暗面 moonshot API 请求地址
     const requestPath = "https://api.moonshot.cn/v1/chat/completions";
     
     const headers = {
