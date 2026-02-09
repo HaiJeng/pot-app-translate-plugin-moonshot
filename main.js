@@ -1,11 +1,28 @@
+async function init(options) {
+    // 初始化函数，可以用于验证配置或预加载模型列表
+    const { config, utils } = options;
+    const { tauriFetch: fetch } = utils;
+    
+    // 如果需要动态获取模型列表，可以在这里实现
+    // 当前版本使用静态配置
+    
+    return true;
+}
+
 async function translate(text, from, to, options) {
     const { config, utils } = options;
     const { tauriFetch: fetch } = utils;
     
-    let { apiKey, model = "deepseek-chat" } = config;
+    // 从配置中获取必要的参数
+    let { apiKey, model = "moonshot-v1-8k" } = config;
     
-    // 设置默认请求路径
-    const requestPath = "https://api.deepseek.com/chat/completions";
+    // 验证必要配置
+    if (!apiKey) {
+        throw "API密钥未配置，请在插件设置中添加月之暗面 API密钥";
+    }
+    
+    // 月之暗面 moonshot API 请求地址
+    const requestPath = "https://api.moonshot.cn/v1/chat/completions";
     
     const headers = {
         'Content-Type': 'application/json',
