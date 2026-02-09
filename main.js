@@ -1,14 +1,3 @@
-async function init(options) {
-    // 初始化函数，可以用于验证配置或预加载模型列表
-    const { config, utils } = options;
-    const { tauriFetch: fetch } = utils;
-    
-    // 如果需要动态获取模型列表，可以在这里实现
-    // 当前版本使用静态配置
-    
-    return true;
-}
-
 async function translate(text, from, to, options) {
     const { config, utils } = options;
     const { tauriFetch: fetch } = utils;
