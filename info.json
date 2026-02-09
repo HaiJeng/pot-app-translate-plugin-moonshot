@@ -1,19 +1,16 @@
 {
-  "id": "plugin.com.TzuLao.deepseek",
+  "id": "plugin.com.TzuLao.kimi",
   "plugin_type": "translate",
-  "icon": "deepseek.svg",
-  "display": "deepseek",
-  "homepage": "https://github.com/tzulao55/pot-app-translate-plugin-deepseek",
+  "icon": "favicon.ico",
+  "display": "moonshot",
+  "homepage": "https://github.com/tzulao55/pot-app-translate-plugin-kimi",
   "needs": [
     {
       "key": "model",
-      "display": "模型选择",
-      "type": "select",
-      "options": {
-        "deepseek-chat": "deepseek-chat",
-        "deepseek-reasoner": "deepseek-reasoner"
-      },
-      "default": "deepseek-chat"
+      "display": "模型输入",
+      "type": "input",
+      "default": "moonshot-v1-8k",
+      "description": "输入要使用的月之暗面模型"
     },
     {
       "key": "apiKey",

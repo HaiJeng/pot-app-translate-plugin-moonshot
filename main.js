@@ -2,10 +2,16 @@ async function translate(text, from, to, options) {
     const { config, utils } = options;
     const { tauriFetch: fetch } = utils;
     
-    let { apiKey, model = "deepseek-chat" } = config;
+    // 从配置中获取必要的参数
+    let { apiKey, model = "moonshot-v1-8k" } = config;
     
-    // 设置默认请求路径
-    const requestPath = "https://api.deepseek.com/chat/completions";
+    // 验证必要配置
+    if (!apiKey) {
+        throw "API密钥未配置，请在插件设置中添加月之暗面 API密钥";
+    }
+    
+    // 月之暗面 Kimi API 请求地址
+    const requestPath = "https://api.moonshot.cn/v1/chat/completions";
     
     const headers = {
         'Content-Type': 'application/json',
